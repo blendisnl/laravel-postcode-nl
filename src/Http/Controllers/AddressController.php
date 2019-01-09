@@ -38,7 +38,10 @@ class AddressController extends Controller
     public function get(string $postcode, string $houseNumber, string $houseNumberAddition = null): JsonResponse
     {
         try {
-            $address = $this->lookup->lookup(str_replace(' ', '', $postcode), (int)$houseNumber, $houseNumberAddition);
+            $postcode = strtoupper($postcode);
+            $postcode = str_replace(' ', '', $postcode);
+
+            $address = $this->lookup->lookup($postcode, (int)$houseNumber, $houseNumberAddition);
             return response()->json($address);
         } catch (ValidationException $e) {
             abort(400, 'Bad Request');
