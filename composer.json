@@ -9,9 +9,9 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^8.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.4",
         "illuminate/config": "9.*",
         "illuminate/contracts": "9.*",
         "illuminate/routing": "9.*",
